@@ -1,0 +1,455 @@
+.drop-spans {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+}
+.drop-spans span {
+  width: 100%;
+  height: 1px;
+  background-color: #339989;
+  display: block;
+  margin-bottom: 5px;
+}
+.drop-spans:hover :nth-of-type(2) {
+  width: 50%;
+  transition: all 1s;
+  align-self: flex-end;
+}
+
+.ul-menu {
+  position: absolute;
+  z-index: 3;
+  border-radius: 10px;
+  top: 75%;
+  flex-direction: row;
+  list-style: none;
+  background-color: #339989;
+  color: #2B2C28;
+  padding: 10px;
+  font-weight: bold;
+  display: none;
+}
+@media (max-width: 767px) {
+  .ul-menu {
+    flex-direction: column;
+    right: 2%;
+  }
+}
+@media (min-width: 768px) {
+  .ul-menu {
+    right: 5%;
+  }
+}
+@media (min-width: 991px) {
+  .ul-menu {
+    right: 4%;
+  }
+}
+@media (min-width: 1200px) {
+  .ul-menu {
+    right: 12%;
+  }
+}
+.ul-menu li {
+  padding: 10px 20px;
+  z-index: 2;
+  transition: all 1s linear;
+}
+.ul-menu li:hover {
+  border-bottom: 1px solid #2B2C28;
+}
+.ul-menu li ol {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: repeat(3, auto);
+}
+.ul-menu li ol li {
+  padding-left: 0;
+  margin-left: 0;
+}
+.ul-menu li ol li:hover {
+  border-bottom: none;
+  background-color: #2B2C28;
+  color: #339989;
+}
+
+.head-scetion {
+  position: relative;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: center;
+  font-size: 60px;
+  letter-spacing: -5px;
+  font-family: "IM Fell English SC", serif;
+  color: rgba(43, 44, 40, 0.2);
+  margin-bottom: 0px;
+}
+.head-scetion::before {
+  content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit';
+  position: absolute;
+  font-size: 30px;
+  bottom: 30px;
+  left: 50%;
+  letter-spacing: normal;
+  transform: translateX(-50%);
+  color: #339989;
+}
+@media (max-width: 767px) {
+  .head-scetion::before {
+    font-size: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .head-scetion::before {
+    bottom: -10px;
+  }
+}
+@media (min-width: 991px) {
+  .head-scetion::before {
+    bottom: 20px;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mini-header {
+  z-index: 1;
+  margin: 0;
+  font-family: "IM Fell English SC", serif;
+  background-color: #2B2C28;
+  color: #339989;
+  padding-top: 10px;
+  position: relative;
+}
+.mini-header:hover .ul-menu {
+  display: flex;
+}
+.mini-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: row;
+}
+.mini-header .container .logo h1 {
+  margin: 0;
+}
+.mini-header .container .dropdown {
+  width: 40px;
+  position: relative;
+}
+
+.header {
+  -webkit-background-image: url(/imgs/slider.jpg);
+  -moz-background-image: url(/imgs/slider.jpg);
+  background-image: url(/imgs/slider.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: calc(100vh - 50px);
+  position: relative;
+  z-index: 0;
+}
+.header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 44, 40, 0.5);
+  transition: all .5s;
+}
+.header .overlay:hover {
+  background-color: transparent;
+}
+.header .container {
+  height: 100%;
+  display: flex;
+}
+.header .container .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "IM Fell English SC", serif;
+  color: #339989;
+  font-size: 30px;
+}
+.header .container .content h2, .header .container .content p {
+  background-color: #2B2C28;
+  width: fit-content;
+  padding: 10px 20px;
+}
+
+.container {
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 991px) {
+  .container {
+    width: 950px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.footer {
+  padding: 20px 10px;
+  background-color: #2B2C28;
+  color: #339989;
+  font-family: "IM Fell English SC", serif;
+}
+.footer .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+}
+@media (max-width: 767px) {
+  .footer .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (min-width: 991px) {
+  .footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.footer .container div {
+  width: fit-content;
+  text-align: center;
+}
+
+.intro {
+  padding: 40px 0;
+}
+.intro .container {
+  display: grid;
+  grid-gap: 20px;
+}
+@media (max-width: 767px) {
+  .intro .container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .intro .container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@media (min-width: 991px) {
+  .intro .container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+}
+.intro .container .intro-box {
+  padding: 20px 10px;
+}
+.intro .container .intro-box .fas {
+  display: block;
+  font-size: 35px;
+  text-align: center;
+  color: #2B2C28;
+}
+.intro .container .intro-box h3 {
+  text-align: center;
+  color: #339989;
+  font-family: "IM Fell English SC", serif;
+}
+.intro .container .intro-box p {
+  text-align: justify;
+  line-height: 1.8;
+  position: relative;
+  padding: 0 10px;
+}
+.intro .container .intro-box p::after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #339989;
+}
+
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
+}
+@media (max-width: 767px) {
+  .services .container {
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(3, auto);
+  }
+}
+@media (min-width: 768px) {
+  .services .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 991px) {
+  .services .container {
+    display: grid;
+  }
+}
+.services .container .head-scetion {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+@media (max-width: 767px) {
+  .services .container .head-scetion {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+}
+.services .container .section-parent1, .services .container .section-parent2, .services .container .section-parent3 {
+  padding: 10px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  color: rgba(43, 44, 40, 0.5);
+  line-height: 1.6;
+}
+.services .container .section-parent1 h3, .services .container .section-parent2 h3, .services .container .section-parent3 h3 {
+  color: #2B2C28;
+  font-family: "IM Fell English SC", serif;
+}
+.services .container .section-parent1 h3 i, .services .container .section-parent2 h3 i, .services .container .section-parent3 h3 i {
+  color: #339989;
+  font-size: 30px;
+  padding-right: 10px;
+}
+.services .container .section-parent1 .section-child {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.services .container .section-parent2 .section-child {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.services .container .section-parent3 .section-child {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.services .container .section-parent3 .section-child img {
+  padding: 10px;
+}
+@media (max-width: 767px) {
+  .services .container .section-parent3 .section-child img {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768px) {
+  .services .container .section-parent3 .section-child img {
+    width: 100%;
+  }
+}
+
+.reservation {
+  display: grid;
+}
+@media (max-width: 767px) {
+  .reservation {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+@media (min-width: 991px) {
+  .reservation {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+}
+.reservation .reserv-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 44, 40, 0.5);
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-image: url(/imgs/reservation-form.jpg);
+  position: relative;
+}
+.reservation .reserv-form form {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 40px 20px;
+}
+.reservation .reserv-form form input, .reservation .reserv-form form textarea {
+  padding: 10px;
+  background-color: transparent;
+  color: #2B2C28;
+  border: 1px solid #2B2C28;
+  outline: none;
+}
+.reservation .reserv-form form textarea {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+.reservation .reserv-form form input[type='submit'] {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-color: #339989;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.reservation .reserv-text {
+  background-color: #339989;
+  padding: 20px 40px;
+  color: #2B2C28;
+  text-transform: uppercase;
+  font-family: "IM Fell English SC", serif;
+}
+.reservation .reserv-text p {
+  line-height: 1.7;
+  text-align: justify;
+  padding-top: 10px;
+}
+.reservation .reserv-text p:nth-child(2) {
+  padding-bottom: 50px;
+}
+
+/*# sourceMappingURL=style.css.map */
